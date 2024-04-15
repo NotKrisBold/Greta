@@ -1,0 +1,21 @@
+| options | unit | current value |
+| --- | --- | --- |
+| ['Energy mix CH', 'Energy mix IT'] |  | Energy mix CH |
+|  | kWh | 0.01 |
+|  | CHF/h | 25.00 |
+|  | h | 0.1 |
+|  | Kg | 0.25 |
+|  | EUR | 10.0 |
+| ['ABS', 'PET', 'PP'] |  | ABS |
+|  | Kg | 0.75 |
+|  | EUR | 5.0 |
+| ['Lorry', 'Freight train'] |  | Lorry |
+|  | Km | 100 |
+|  | kg | 1 |
+|  | EUR | 3.0 |
+|  | kWh | 1.0 |
+|  | hours | 200.0 |
+|  | EUR | 0.37 |
+|  | EUR | 3.0 |
+|  | kWh | 0.01 |
+|  | h | 0.05 |
