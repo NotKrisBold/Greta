@@ -64,6 +64,7 @@ class Calculator:
 
     def print_table(self):
         if self.value is not None:
+            print("yy")
             filename = "calculatedScenario.txt"
             with open(filename, 'w') as file:
-                file.write(self.value.to_string(index=4))
+                file.write(self.value.to_json(index=4))

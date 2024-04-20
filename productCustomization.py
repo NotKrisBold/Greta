@@ -1,5 +1,7 @@
+import json
 import requests
 import pandas as pd
+
 
 class Customizer:
     def __init__(self, bearer_token):
@@ -46,7 +48,8 @@ class Customizer:
         return df
 
     def print_table(self):
-        filename = "productCustomization.txt"
         if self.value is not None:
+            print("nn")
+            filename = "productCustomization.txt"
             with open(filename, 'w') as file:
-                file.write(self.value.to_string())
+                file.write(self.value.to_json(index=4))
