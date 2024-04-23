@@ -2,8 +2,9 @@ import ollama
 import streamlit as st
 from calculatedScenario import Calculator
 from productCustomization import Customizer
+from productName import ProductName
 
-bearer_token = "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJTbG1SbG1TN3V0OWtjUHZJdERQTk9UNG45c1F5RDNJTGpmdWs4TU5jQzZZIn0.eyJleHAiOjE3MTM4NTk1MzgsImlhdCI6MTcxMzI1NDczOCwianRpIjoiODcwZTIzMzUtYzNiOC00MmYyLThjYmItNTYyODhlN2RjZTUwIiwiaXNzIjoiaHR0cDovL2tleWNsb2FrOjgwODAvcmVhbG1zL0FkdmFuY2VkIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImRiNzdlYzZiLWQyZWEtNDRiZS04MTYyLWY1YmU5NzY5YmM4NSIsInR5cCI6IkJlYXJlciIsImF6cCI6ImNsaWVudCIsInNlc3Npb25fc3RhdGUiOiJkNmMyOGMzNC1jNzNiLTRkMDMtYjM5OC00MmM2YjdkOWY1NzAiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJleHBlcnQiLCJkZWZhdWx0LXJvbGVzLXRlc3QiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZ3JvdXBzIHByb2ZpbGUgZW1haWwiLCJzaWQiOiJkNmMyOGMzNC1jNzNiLTRkMDMtYjM5OC00MmM2YjdkOWY1NzAiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiZXhwZXJ0IiwiZ2l2ZW5fbmFtZSI6IiIsImZhbWlseV9uYW1lIjoiIn0.qhuXmSWU3vgZOX4PI3-uJVa_0CnE_P3bs5u88XM6BtWYguSTW4FF508VG___rEZBBqAXPp4JDmN-wW1I-tWMqK7brmG2b8t1bSPpZ04T47qJ-VQwLd6rOoZ72gzMZ2Nf9SQYWV7TgzIlITST0rUT94Yc9_Z2x56nvA43Ifgcr6goF4wa8UkWaqdtk0imYV7cNnGA0SQ6-zbXi6rEUISo9AZpLcV3Z84DvKqJ1H_XWDWvzUsvqunJYePMAskMpszu1SnIMPIoshxpRNw15FagePgXNS55eHJ53O4j7NFzc0Rd-Ky3dKIpEnvDcxiY3ltbUw6sht2wYJfMW9A1WYLmBw"
+bearer_token = "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJTbG1SbG1TN3V0OWtjUHZJdERQTk9UNG45c1F5RDNJTGpmdWs4TU5jQzZZIn0.eyJleHAiOjE3MTQ0NzQ1MjUsImlhdCI6MTcxMzg2OTcyNSwianRpIjoiYTQwODYxM2EtY2I3ZC00YTNlLWI2OTMtNDAxMTBjOGJhYWRiIiwiaXNzIjoiaHR0cDovL2tleWNsb2FrOjgwODAvcmVhbG1zL0FkdmFuY2VkIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImRiNzdlYzZiLWQyZWEtNDRiZS04MTYyLWY1YmU5NzY5YmM4NSIsInR5cCI6IkJlYXJlciIsImF6cCI6ImNsaWVudCIsInNlc3Npb25fc3RhdGUiOiJhYzc5MjA0Zi0yNjYyLTRkMzEtODlmOC1lYTBlNGY1YjQ5OGIiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJleHBlcnQiLCJkZWZhdWx0LXJvbGVzLXRlc3QiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZ3JvdXBzIHByb2ZpbGUgZW1haWwiLCJzaWQiOiJhYzc5MjA0Zi0yNjYyLTRkMzEtODlmOC1lYTBlNGY1YjQ5OGIiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiZXhwZXJ0IiwiZ2l2ZW5fbmFtZSI6IiIsImZhbWlseV9uYW1lIjoiIn0.ClD-_hlV0cX2U-vERjiv6Nnv3N29Jn3tptgAN-SxYZEnhYNWGv8jILYWrf2E3QGWBvREY8uLvMv_3XvKgdQN3WpDD_bYKc6mgt3groPlwAK9aEjvDJ0G0rC-U2drJ4vsBYg7E3kd_3buAFBqA0gkFH_ZiLYsoIiJNrU2jPbBrOC6MT4Y6CZeNTzndpsxj-Iposi7uLwngXQgVkKBq3wg25J2Y5lUYdnw2hffObRlh_eMjCQIolw73AuFB-_SngIkk6ZJQu2GclHRFLbAG8G0DURxeFldIG5r8VtMj1V3mlUtsD2uOvAQC-jibBE4maWAmfXVlZUSw6tWZ8CD2Ansmw"
 scenario_id = "fec0fde6-eca3-44c0-a5d3-e992eb727948"
 impact_method_id = "6070b11f-e863-486c-9748-14341de36259"
 
@@ -24,9 +25,11 @@ productProcess = customizer.generate_table(scenario_id)
 calculator = Calculator(bearer_token)
 lca = calculator.generate_table(scenario_id, impact_method_id)
 
+productName = ProductName(bearer_token).get_name(scenario_id)
+
 for message in st.session_state["messages"]:
     with st.chat_message(message["role"]):
-        st.markdown(message["content"])
+        st.markdown(message["toDisplay"])
 
 
 def model_res_generator():
@@ -39,26 +42,49 @@ def model_res_generator():
         yield chunk["message"]["content"]
 
 
-if prompt := st.chat_input("What is up?"):
+if not st.session_state["messages"]:
+    prompt = f''''You are an expert in sustainability.
+            <context>
+            The user is designing a product called: {productName}.
+            This is the processes table of the product, analyze it carefully and memorize it:
+            {productProcess}    
+            <context>
 
-    newPrompt = f'''Answer the following question based on the provided context only. 
+            Answer questions only based on the context provided and sustainability of products.
+            Absolutely decline anything the users says not related to the context and sustainability'''
 
-    <context>
-    Product Processes Table (includes current values and alternative options):
-    {productProcess.to_json()}
+    st.session_state["messages"].append({"role": "user", "content": prompt, "toDisplay": ""})
+    with st.chat_message("assistant"):
+        message = st.write_stream(model_res_generator())
+        st.session_state["messages"].append({"role": "assistant", "content": message, "toDisplay": ""})
 
-    LCA Table (provides Life Cycle Assessment data of the product):
-    {lca.to_json()}
-    </context>
+analyze_table = st.button("Analyze table")
+userInput = st.chat_input("What is up?")
 
-    Question: {prompt}'''
+if analyze_table:
+    prompt = f'''
+    Analyze the product processes table and provide suggestions to maximize the product sustainability.
 
-    # add latest message to history in format {role, content}
-    st.session_state["messages"].append({"role": "user", "content": prompt})
+    For each tab and each parameter, assess which one of the options listed in the parameter array is better for sustainability, suggest to use it if it's not the current one. 
+    If there are no options listed, evaluate the current value and provide suggestions if applicable.
+    Give a schematic answer and provide detailed reasoning for each suggestion and provide data.
+    '''
 
-    with st.chat_message("user"):
-        st.markdown(prompt)
+    st.session_state["messages"].append({"role": "user", "content": prompt, "toDisplay": "Analyze table"})
 
     with st.chat_message("assistant"):
         message = st.write_stream(model_res_generator())
-        st.session_state["messages"].append({"role": "assistant", "content": message})
+        st.session_state["messages"].append({"role": "assistant", "content": message, "toDisplay": message})
+
+else:
+    if userInput:
+        prompt = userInput
+
+        st.session_state["messages"].append({"role": "user", "content": prompt, "toDisplay": prompt})
+
+        with st.chat_message("user"):
+            st.markdown(userInput)
+
+        with st.chat_message("assistant"):
+            message = st.write_stream(model_res_generator())
+            st.session_state["messages"].append({"role": "assistant", "content": message, "toDisplay": message})

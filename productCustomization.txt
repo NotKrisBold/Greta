@@ -1,1 +1,117 @@
-{"options":{"Electricity Mix":["Energy mix CH","Energy mix IT"],"Energy Usage Assembly":[],"Hourly cost":[],"Assembly time":[],"Fan Weight":[],"Fan cost":[],"Plastic Material":["ABS","PET","PP"],"Shell Weight":[],"Shell cost":[],"Transport type":["Lorry","Freight train"],"Distance":[],"Heater Weight":[],"Transport cost":[],"Energy Usage":[],"Useful Life":[],"Energy cost":[],"Reverse logistic cost":[],"Energy Usage Disassembly":[],"Disassembly time":[]},"unit":{"Electricity Mix":null,"Energy Usage Assembly":"kWh","Hourly cost":"CHF\/h","Assembly time":"h","Fan Weight":"Kg","Fan cost":"EUR","Plastic Material":null,"Shell Weight":"Kg","Shell cost":"EUR","Transport type":null,"Distance":"Km","Heater Weight":"kg","Transport cost":"EUR","Energy Usage":"kWh","Useful Life":"hours","Energy cost":"EUR","Reverse logistic cost":"EUR","Energy Usage Disassembly":"kWh","Disassembly time":"h"},"current value":{"Electricity Mix":"Energy mix CH","Energy Usage Assembly":"0.01","Hourly cost":"25.00","Assembly time":"0.1","Fan Weight":"0.25","Fan cost":"10.0","Plastic Material":"ABS","Shell Weight":"0.75","Shell cost":"5.0","Transport type":"Lorry","Distance":"100","Heater Weight":1,"Transport cost":"3.0","Energy Usage":"1.0","Useful Life":"200.0","Energy cost":"0.37","Reverse logistic cost":"3.0","Energy Usage Disassembly":"0.01","Disassembly time":"0.05"}}
+Tab: Assembly
+	Parameter: Electricity Mix
+		Unit: None
+		Current Value: Energy mix CH
+		Options: Energy mix CH, Energy mix IT
+
+	Parameter: Energy Usage Assembly
+		Unit: kWh
+		Current Value: 0.01
+
+	Parameter: Assembly time
+		Unit: h
+		Current Value: 0.1
+
+Tab: Heater EoL
+	Parameter: Hourly cost
+		Unit: CHF/h
+		Current Value: 25.00
+
+	Parameter: Electricity Mix
+		Unit: None
+		Current Value: Energy mix CH
+		Options: Energy mix CH, Energy mix IT
+
+	Parameter: Energy Usage Disassembly
+		Unit: kWh
+		Current Value: 0.01
+
+	Parameter: Disassembly time
+		Unit: h
+		Current Value: 0.05
+
+Tab: Fan production
+	Parameter: Fan Weight
+		Unit: Kg
+		Current Value: 0.25
+
+	Parameter: Fan cost
+		Unit: EUR
+		Current Value: 10.0
+
+Tab: Shell production
+	Parameter: Plastic Material
+		Unit: None
+		Current Value: ABS
+		Options: ABS, PET, PP
+
+	Parameter: Shell Weight
+		Unit: Kg
+		Current Value: 0.75
+
+	Parameter: Shell cost
+		Unit: EUR
+		Current Value: 5.0
+
+Tab: casting, aluminium
+	Parameter: Electricity Mix
+		Unit: None
+		Current Value: Energy mix CH
+		Options: Energy mix CH, Energy mix IT
+
+Tab: injection moulding - shell production
+	Parameter: Electricity Mix
+		Unit: None
+		Current Value: Energy mix CH
+		Options: Energy mix CH, Energy mix IT
+
+Tab: Distribution
+	Parameter: Transport type
+		Unit: None
+		Current Value: Lorry
+		Options: Lorry, Freight train
+
+	Parameter: Distance
+		Unit: Km
+		Current Value: 100
+
+	Parameter: Heater Weight
+		Unit: kg
+		Current Value: 1
+
+	Parameter: Transport cost
+		Unit: EUR
+		Current Value: 3.0
+
+Tab: Usage
+	Parameter: Electricity Mix
+		Unit: None
+		Current Value: Energy mix CH
+		Options: Energy mix CH, Energy mix IT, Energy mix DE
+
+	Parameter: Energy Usage
+		Unit: kWh
+		Current Value: 1.0
+
+	Parameter: Useful Life
+		Unit: hours
+		Current Value: 200.0
+
+	Parameter: Energy cost
+		Unit: EUR
+		Current Value: 0.37
+
+Tab: Reverse Logistic
+	Parameter: Transport type
+		Unit: None
+		Current Value: Lorry
+		Options: Lorry, Freight train
+
+	Parameter: Distance
+		Unit: Km
+		Current Value: 100
+
+	Parameter: Reverse logistic cost
+		Unit: EUR
+		Current Value: 3.0
+

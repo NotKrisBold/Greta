@@ -30,26 +30,38 @@ class Customizer:
         data = data["customization"]["parameters"]
 
         table = {}
-
         for item in data:
+            key = item["display"]["tab"]
             alias = item["alias"]
-            table[alias] = {"options": [], "unit": item.get("unitOfMeasure"), "current value": item.get("value")}
+
+            # Append the alias to the table[key]
+            if key not in table:
+                table[key] = {}
+
+            table[key][alias] = {"options": [], "unit": item.get("unitOfMeasure"), "current value": item.get("value")}
 
             options = item.get("options")
             if options is not None:
                 for option in options:
-                    table[alias]["options"].append(option.get("label"))
+                    table[key][alias]["options"].append(option.get("label"))
                     if option.get("value") == item.get("value"):
-                        table[alias]["current value"] = option.get("label")
+                        table[key][alias]["current value"] = option.get("label")
 
-        df = pd.DataFrame(table)
-        df = df.transpose()
-        self.value = df
-        return df
+        self.value = table
+        return table
 
     def print_table(self):
         if self.value is not None:
-            print("nn")
             filename = "productCustomization.txt"
             with open(filename, 'w') as file:
-                file.write(self.value.to_json(index=4))
+                for tab, parameters in self.value.items():
+                    file.write(f"Tab: {tab}\n")
+                    for alias, details in parameters.items():
+                        file.write(f"\tParameter: {alias}\n")
+                        file.write(f"\t\tUnit: {details['unit']}\n")
+                        file.write(f"\t\tCurrent Value: {details['current value']}\n")
+                        if len(details["options"]) > 0:
+                            file.write(f"\t\tOptions: {', '.join(details['options'])}\n")
+                        file.write("\n")
+
+
