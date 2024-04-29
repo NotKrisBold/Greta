@@ -1,6 +1,5 @@
 Tab: Assembly
 	Parameter: Electricity Mix
-		Unit: None
 		Current Value: Energy mix CH
 		Options: Energy mix CH, Energy mix IT
 
@@ -18,7 +17,6 @@ Tab: Heater EoL
 		Current Value: 25.00
 
 	Parameter: Electricity Mix
-		Unit: None
 		Current Value: Energy mix CH
 		Options: Energy mix CH, Energy mix IT
 
@@ -41,7 +39,6 @@ Tab: Fan production
 
 Tab: Shell production
 	Parameter: Plastic Material
-		Unit: None
 		Current Value: ABS
 		Options: ABS, PET, PP
 
@@ -55,19 +52,16 @@ Tab: Shell production
 
 Tab: casting, aluminium
 	Parameter: Electricity Mix
-		Unit: None
 		Current Value: Energy mix CH
 		Options: Energy mix CH, Energy mix IT
 
 Tab: injection moulding - shell production
 	Parameter: Electricity Mix
-		Unit: None
 		Current Value: Energy mix CH
 		Options: Energy mix CH, Energy mix IT
 
 Tab: Distribution
 	Parameter: Transport type
-		Unit: None
 		Current Value: Lorry
 		Options: Lorry, Freight train
 
@@ -85,7 +79,6 @@ Tab: Distribution
 
 Tab: Usage
 	Parameter: Electricity Mix
-		Unit: None
 		Current Value: Energy mix CH
 		Options: Energy mix CH, Energy mix IT, Energy mix DE
 
@@ -103,7 +96,6 @@ Tab: Usage
 
 Tab: Reverse Logistic
 	Parameter: Transport type
-		Unit: None
 		Current Value: Lorry
 		Options: Lorry, Freight train
 

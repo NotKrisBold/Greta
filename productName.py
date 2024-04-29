@@ -22,5 +22,5 @@ class ProductName:
 
     def get_name(self, scenario_id):
         data = self.fetch(scenario_id)
-        self.value = data["description"]
+        self.value = data["name"]
         return self.value

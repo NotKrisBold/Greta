@@ -5,23 +5,19 @@
                 "Energy mix CH",
                 "Energy mix IT"
             ],
-            "unit": null,
             "current value": "Energy mix CH"
         },
         "Energy Usage Assembly": {
-            "options": [],
             "unit": "kWh",
             "current value": "0.01"
         },
         "Assembly time": {
-            "options": [],
             "unit": "h",
             "current value": "0.1"
         }
     },
     "Heater EoL": {
         "Hourly cost": {
-            "options": [],
             "unit": "CHF/h",
             "current value": "25.00"
         },
@@ -30,28 +26,23 @@
                 "Energy mix CH",
                 "Energy mix IT"
             ],
-            "unit": null,
             "current value": "Energy mix CH"
         },
         "Energy Usage Disassembly": {
-            "options": [],
             "unit": "kWh",
             "current value": "0.01"
         },
         "Disassembly time": {
-            "options": [],
             "unit": "h",
             "current value": "0.05"
         }
     },
     "Fan production": {
         "Fan Weight": {
-            "options": [],
             "unit": "Kg",
             "current value": "0.25"
         },
         "Fan cost": {
-            "options": [],
             "unit": "EUR",
             "current value": "10.0"
         }
@@ -63,16 +54,13 @@
                 "PET",
                 "PP"
             ],
-            "unit": null,
             "current value": "ABS"
         },
         "Shell Weight": {
-            "options": [],
             "unit": "Kg",
             "current value": "0.75"
         },
         "Shell cost": {
-            "options": [],
             "unit": "EUR",
             "current value": "5.0"
         }
@@ -83,7 +71,6 @@
                 "Energy mix CH",
                 "Energy mix IT"
             ],
-            "unit": null,
             "current value": "Energy mix CH"
         }
     },
@@ -93,7 +80,6 @@
                 "Energy mix CH",
                 "Energy mix IT"
             ],
-            "unit": null,
             "current value": "Energy mix CH"
         }
     },
@@ -103,21 +89,17 @@
                 "Lorry",
                 "Freight train"
             ],
-            "unit": null,
             "current value": "Lorry"
         },
         "Distance": {
-            "options": [],
             "unit": "Km",
             "current value": "100"
         },
         "Heater Weight": {
-            "options": [],
             "unit": "kg",
             "current value": 1
         },
         "Transport cost": {
-            "options": [],
             "unit": "EUR",
             "current value": "3.0"
         }
@@ -129,21 +111,17 @@
                 "Energy mix IT",
                 "Energy mix DE"
             ],
-            "unit": null,
             "current value": "Energy mix CH"
         },
         "Energy Usage": {
-            "options": [],
             "unit": "kWh",
             "current value": "1.0"
         },
         "Useful Life": {
-            "options": [],
             "unit": "hours",
             "current value": "200.0"
         },
         "Energy cost": {
-            "options": [],
             "unit": "EUR",
             "current value": "0.37"
         }
@@ -154,16 +132,13 @@
                 "Lorry",
                 "Freight train"
             ],
-            "unit": null,
             "current value": "Lorry"
         },
         "Distance": {
-            "options": [],
             "unit": "Km",
             "current value": "100"
         },
         "Reverse logistic cost": {
-            "options": [],
             "unit": "EUR",
             "current value": "3.0"
         }

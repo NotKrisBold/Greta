@@ -1,6 +1,4 @@
-import json
 import requests
-import pandas as pd
 
 
 class Customizer:
@@ -38,14 +36,21 @@ class Customizer:
             if key not in table:
                 table[key] = {}
 
-            table[key][alias] = {"options": [], "unit": item.get("unitOfMeasure"), "current value": item.get("value")}
-
             options = item.get("options")
             if options is not None:
+                if item.get("unitOfMeasure") is not None:
+                    table[key][alias] = {"options": [], "unit": item.get("unitOfMeasure"), "current value": item.get("value")}
+                else:
+                    table[key][alias] = {"options": [], "current value": item.get("value")}
                 for option in options:
                     table[key][alias]["options"].append(option.get("label"))
                     if option.get("value") == item.get("value"):
                         table[key][alias]["current value"] = option.get("label")
+            else:
+                if item.get("unitOfMeasure") is not None:
+                    table[key][alias] = {"unit": item.get("unitOfMeasure"), "current value": item.get("value")}
+                else:
+                    table[key][alias] = {"current value": item.get("value")}
 
         self.value = table
         return table
@@ -58,10 +63,13 @@ class Customizer:
                     file.write(f"Tab: {tab}\n")
                     for alias, details in parameters.items():
                         file.write(f"\tParameter: {alias}\n")
-                        file.write(f"\t\tUnit: {details['unit']}\n")
-                        file.write(f"\t\tCurrent Value: {details['current value']}\n")
-                        if len(details["options"]) > 0:
+                        if 'unit' in details:
+                            file.write(f"\t\tUnit: {details['unit']}\n")
+
+                        if 'current value' in details:
+                            file.write(f"\t\tCurrent Value: {details['current value']}\n")
+
+                        if 'options' in details:
                             file.write(f"\t\tOptions: {', '.join(details['options'])}\n")
                         file.write("\n")
-
 
