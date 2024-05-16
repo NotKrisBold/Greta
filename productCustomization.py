@@ -5,7 +5,6 @@ class Customizer:
     def __init__(self, bearer_token):
         self.value = None
         self.bearer_token = bearer_token
-        self.df = None
 
     def calculate_scenario(self, scenario_id):
         url = 'http://localhost:30226/api/v1/customized-process/' + scenario_id
