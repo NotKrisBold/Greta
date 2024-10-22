@@ -1,0 +1,109 @@
+Tab: Assembly
+	Parameter: Electricity Mix
+		Current Value: Energy mix CH
+		Options: Energy mix CH, Energy mix IT
+
+	Parameter: Energy Usage Assembly
+		Unit: kWh
+		Current Value: 0.01
+
+	Parameter: Assembly time
+		Unit: h
+		Current Value: 0.1
+
+Tab: Heater EoL
+	Parameter: Hourly cost
+		Unit: CHF/h
+		Current Value: 25.00
+
+	Parameter: Electricity Mix
+		Current Value: Energy mix CH
+		Options: Energy mix CH, Energy mix IT
+
+	Parameter: Energy Usage Disassembly
+		Unit: kWh
+		Current Value: 0.01
+
+	Parameter: Disassembly time
+		Unit: h
+		Current Value: 0.05
+
+Tab: Fan production
+	Parameter: Fan Weight
+		Unit: Kg
+		Current Value: 0.25
+
+	Parameter: Fan cost
+		Unit: EUR
+		Current Value: 10.0
+
+Tab: Shell production
+	Parameter: Plastic Material
+		Current Value: ABS
+		Options: ABS, PET, PP
+
+	Parameter: Shell Weight
+		Unit: Kg
+		Current Value: 0.75
+
+	Parameter: Shell cost
+		Unit: EUR
+		Current Value: 5.0
+
+Tab: casting, aluminium
+	Parameter: Electricity Mix
+		Current Value: Energy mix CH
+		Options: Energy mix CH, Energy mix IT
+
+Tab: injection moulding - shell production
+	Parameter: Electricity Mix
+		Current Value: Energy mix CH
+		Options: Energy mix CH, Energy mix IT
+
+Tab: Distribution
+	Parameter: Transport type
+		Current Value: Lorry
+		Options: Lorry, Freight train
+
+	Parameter: Distance
+		Unit: Km
+		Current Value: 100
+
+	Parameter: Heater Weight
+		Unit: kg
+		Current Value: 1
+
+	Parameter: Transport cost
+		Unit: EUR
+		Current Value: 3.0
+
+Tab: Usage
+	Parameter: Electricity Mix
+		Current Value: Energy mix CH
+		Options: Energy mix CH, Energy mix IT, Energy mix DE
+
+	Parameter: Energy Usage
+		Unit: kWh
+		Current Value: 1.0
+
+	Parameter: Useful Life
+		Unit: hours
+		Current Value: 200.0
+
+	Parameter: Energy cost
+		Unit: EUR
+		Current Value: 0.37
+
+Tab: Reverse Logistic
+	Parameter: Transport type
+		Current Value: Lorry
+		Options: Lorry, Freight train
+
+	Parameter: Distance
+		Unit: Km
+		Current Value: 100
+
+	Parameter: Reverse logistic cost
+		Unit: EUR
+		Current Value: 3.0
+
